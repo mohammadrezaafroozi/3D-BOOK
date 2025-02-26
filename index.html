@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            transform: perspective(800px) rotateY(45deg);
+            transition: 2s;
+            &:hover{
+                transform:perspective(800px) rotateY(135deg);
+            }
+
+            >* {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            >img{
+                object-fit:fill;
+            }
+            >p{
+                background-image: linear-gradient(to right,rgb(23, 23, 66),rgb(33, 101, 165));
+                display: flex;
+                justify-content: center;
+                padding: 30px;
+                transform: translateZ(-80px)
+                scaleX(-1);
+               
+            }
+            &::after{
+                content: '';
+                display: flex;
+                transform-origin: left;
+                transform: rotateY(90deg);
+                background-color: rgb(196, 196, 27);
+                width: 80px;
+                height: 100%;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <figure class="box">
+        <img src="./img/./download.jfif" alt="">
+        <p>A galaxy is a system of stars, stellar remnants, interstellar gas, dust, and dark matter bound together by
+            gravity. The word is derived from the Greek galaxias, literally 'milky', a reference to the Milky Way galaxy
+            that contains the Solar System.</p>
+    </figure>
+</body>
+
+</html>
